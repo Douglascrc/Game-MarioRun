@@ -21,7 +21,7 @@ const loop = setInterval(()=> {
     tubo.style.left = `${tuboPosition}px`;
 
     mario.style.animation= 'none';
-    mario.style.bottom= `${marioPosition}px` ; 
+    mario.style.bottom= `${marioPosition}px`; 
     
     mario.src='Imgs/game-over.png'; 
     mario.style.width= '70px'; 

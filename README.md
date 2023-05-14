@@ -3,7 +3,7 @@
 </p>
   
 <p align="center" >
-  <img src="Mariorun/Imgs/Cmario.png" alt="Mario Run">
+  <img src="Imgs/Cmario.png" alt="Mario Run">
 </p>
 
 # 🚀 Tecnologias

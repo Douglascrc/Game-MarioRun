@@ -35,7 +35,7 @@
     position: absolute;
     width: 80px;
     bottom: 0; 
-    animation: tubo-animation 3s linear infinite;
+    animation: tubo-animation 2s linear infinite;
 }
 
 @keyframes tubo-animation {

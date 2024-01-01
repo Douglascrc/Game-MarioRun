@@ -1,5 +1,8 @@
 const mario = document.querySelector('.mario');
 const tubo = document.querySelector('.tubo');
+const placar = document.querySelector('.placar');
+const scoreElemento = document.getElementById('score');
+const recordeElemento = document.getElementById('recorde'); 
 
 const jump = () => {
     mario.classList.add('jump');
@@ -10,16 +13,17 @@ const jump = () => {
 }
 
 const loop = setInterval(()=> {
-
+  
   const tuboPosition = tubo.offsetLeft;
-  // o "replace" substitui o 'px'para que a constante consiga interpretar
-
+  
+  
   const marioPosition= +window.getComputedStyle(mario).bottom.replace('px','');
-
+  
   if(tuboPosition <= 120  && tuboPosition > 0  && marioPosition <=80 ) {
     tubo.style.animation = 'none';
     tubo.style.left = `${tuboPosition}px`;
-
+    
+    
     mario.style.animation= 'none';
     mario.style.bottom= `${marioPosition}px`; 
     
@@ -29,7 +33,34 @@ const loop = setInterval(()=> {
 
     clearInterval(loop);
   }
-
+  
 },10); 
 
 document.addEventListener('keydown', jump);
+
+let score = 0;
+let recorde = localStorage.getItem('recorde') || 0; 
+
+const atualizarPlacar = () => {
+  scoreElemento.textContent = score;
+  recordeElemento.textContent = recorde; // Atualiza o elemento do recorde na tela
+};
+
+const incrementarPontuacao = () => {
+  score++;
+  if (score > recorde) {
+    recorde = score;
+    localStorage.setItem('recorde', recorde);
+  }
+  atualizarPlacar();
+};
+
+
+setInterval(() => {
+  const marioPositionX = mario.getBoundingClientRect().left;
+
+  if (marioPositionX % 200 === 0) {
+    incrementarPontuacao();
+  }
+
+}, 100);

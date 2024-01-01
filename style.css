@@ -38,6 +38,16 @@
     animation: tubo-animation 2s linear infinite;
 }
 
+.placar {
+    position: relative;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-weight: 900;
+    font-size: 40px;
+    font-family: 'VT323', monospace;
+    color:  rgb(253, 184, 0);
+}
+
 @keyframes tubo-animation {
     from {
         right: -80px;

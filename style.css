@@ -48,6 +48,17 @@
     color:  rgb(253, 184, 0);
 }
 
+.gameover {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'VT323', monospace;
+    font-size: 170px;
+    color: red;
+}
+
 @keyframes tubo-animation {
     from {
         right: -80px;
